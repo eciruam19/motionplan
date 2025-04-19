@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFFB Motionplan - Dokumente</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-user-role="studierende">
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">DFFB Motionplan</div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projekte</a></li>
+          <li class="nav-item"><a href="documents.html" class="nav-link">Dokumente</a></li>
+        </ul>
+      </nav>
+      <div class="user-menu">
+        <button id="user-menu-button" class="user-menu-button">
+          <span>Max Mustermann</span>
+          <i class="fas fa-chevron-down ml-2"></i>
+        </button>
+        <div id="user-menu-dropdown" class="user-menu-dropdown">
+          <a href="#" class="user-menu-item">Profil</a>
+          <a href="#" class="user-menu-item">Einstellungen</a>
+          <a href="login.html" class="user-menu-item">Abmelden</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Alert Container -->
+      <div id="alert-container"></div>
+
+      <div class="flex justify-between items-center mb-4">
+        <h1>Dokumente</h1>
+        <button class="btn btn-primary" data-modal-target="upload-document-modal">Dokument hochladen</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="card mb-6">
+        <div class="card-body">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="form-group">
+              <label for="project-filter" class="form-label">Projekt</label>
+              <select id="project-filter" class="form-control">
+                <option value="">Alle Projekte</option>
+                <option value="1">Die verlorene Zeit</option>
+                <option value="2">Stadtlichter</option>
+                <option value="3">Echos der Vergangenheit</option>
+                <option value="4">Traumfänger</option>
+                <option value="5">Grenzgänger</option>
+                <option value="6">Farbspektrum</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="type-filter" class="form-label">Dokumenttyp</label>
+              <select id="type-filter" class="form-control">
+                <option value="">Alle Typen</option>
+                <option value="drehbuch">Drehbuch</option>
+                <option value="kalkulation">Kalkulation</option>
+                <option value="finanzierungsplan">Finanzierungsplan</option>
+                <option value="zeitplan">Zeitplan</option>
+                <option value="drehplan">Drehplan</option>
+                <option value="motivliste">Motivliste</option>
+                <option value="stabliste">Stabliste</option>
+                <option value="besetzungsliste">Besetzungsliste</option>
+                <option value="antrag_produktionsfreigabe">Antrag Produktionsfreigabe</option>
+                <option value="produktionsvertrag">Produktionsvertrag</option>
+                <option value="motivvertrag">Motivvertrag</option>
+                <option value="darstellervertrag">Darstellervertrag</option>
+                <option value="v_geld_antrag">V-Geld Antrag</option>
+                <option value="v_geld_abrechnung">V-Geld Abrechnung</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="search" class="form-label">Suche</label>
+              <input type="text" id="search" class="form-control" placeholder="Dateiname, Beschreibung...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Documents List -->
+      <div class="card">
+        <div class="card-body">
+          <ul class="document-list">
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Drehbuch_Die_verlorene_Zeit_v2.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Drehbuch</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">08.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Die verlorene Zeit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Kalkulation_Stadtlichter_final.xlsx</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Kalkulation</span>
+                  <span class="badge badge-warning">In Prüfung</span>
+                  <span class="text-sm">05.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Stadtlichter</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Antrag_Produktionsfreigabe_Echos.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Antrag Produktionsfreigabe</span>
+                  <span class="badge badge-warning">Eingereicht</span>
+                  <span class="text-sm">12.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Echos der Vergangenheit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Kalkulation_Die_verlorene_Zeit_final.xlsx</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Kalkulation</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">15.03.2025</span>
+                  <span class="text-sm ml-2">Projekt: Die verlorene Zeit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Drehplan_Die_verlorene_Zeit.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Drehplan</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">20.03.2025</span>
+                  <span class="text-sm ml-2">Projekt: Die verlorene Zeit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Besetzungsliste_Die_verlorene_Zeit.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Besetzungsliste</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">18.03.2025</span>
+                  <span class="text-sm ml-2">Projekt: Die verlorene Zeit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Projektübersicht_Traumfänger.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Projektübersicht</span>
+                  <span class="badge badge-secondary">Entwurf</span>
+                  <span class="text-sm">01.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Traumfänger</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Finanzierungsplan_Stadtlichter.xlsx</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Finanzierungsplan</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">02.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Stadtlichter</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">V_Geld_Antrag_Die_verlorene_Zeit.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">V-Geld Antrag</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">05.04.2025</span>
+                  <span class="text-sm ml-2">Projekt: Die verlorene Zeit</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Motivliste_Grenzgänger.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Motivliste</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">15.02.2025</span>
+                  <span class="text-sm ml-2">Projekt: Grenzgänger</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Upload Document Modal -->
+  <div id="upload-document-modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Dokument hochladen</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="document-upload-form">
+          <div class="form-group">
+            <label for="project-select" class="form-label">Projekt</label>
+            <select id="project-select" name="project-select" class="form-control" required>
+              <option value="">Projekt auswählen</option>
+              <option value="1">Die verlorene Zeit</option>
+              <option value="2">Stadtlichter</option>
+              <option value="3">Echos der Vergangenheit</option>
+              <option value="4">Traumfänger</option>
+              <option value="5">Grenzgänger</option>
+              <option value="6">Farbspektrum</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="document-file" class="form-label">Datei auswählen</label>
+            <input type="file" id="document-file" name="document-file" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="document-type" class="form-label">Dokumenttyp</label>
+            <select id="document-type" name="document-type" class="form-control" required>
+              <option value="drehbuch">Drehbuch</option>
+              <option value="kalkulation">Kalkulation</option>
+              <option value="finanzierungsplan">Finanzierungsplan</option>
+              <option value="zeitplan">Zeitplan</option>
+              <option value="drehplan">Drehplan</option>
+              <option value="motivliste">Motivliste</option>
+              <option value="stabliste">Stabliste</option>
+              <option value="besetzungsliste">Besetzungsliste</option>
+              <option value="antrag_produktionsfreigabe">Antrag Produktionsfreigabe</option>
+              <option value="produktionsvertrag">Produktionsvertrag</option>
+              <option value="motivvertrag">Motivvertrag</option>
+              <option value="darstellervertrag">Darstellervertrag</option>
+              <option value="v_geld_antrag">V-Geld Antrag</option>
+              <option value="v_geld_abrechnung">V-Geld Abrechnung</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="document-description" class="form-label">Beschreibung (optional)</label>
+            <textarea id="document-description" name="document-description" class="form-control" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-close">Abbrechen</button>
+        <button class="btn btn-primary" id="submit-document">Hochladen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

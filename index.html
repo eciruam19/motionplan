@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFFB Motionplan - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-user-role="studierende">
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">DFFB Motionplan</div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projekte</a></li>
+          <li class="nav-item"><a href="documents.html" class="nav-link">Dokumente</a></li>
+        </ul>
+      </nav>
+      <div class="user-menu">
+        <button id="user-menu-button" class="user-menu-button">
+          <span>Max Mustermann</span>
+          <i class="fas fa-chevron-down ml-2"></i>
+        </button>
+        <div id="user-menu-dropdown" class="user-menu-dropdown">
+          <a href="#" class="user-menu-item">Profil</a>
+          <a href="#" class="user-menu-item">Einstellungen</a>
+          <a href="login.html" class="user-menu-item">Abmelden</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Alert Container -->
+      <div id="alert-container"></div>
+
+      <h1 class="mb-4">Dashboard</h1>
+
+      <!-- Overview Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 mb-6">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-xl font-bold mb-2">Aktive Projekte</h3>
+            <p class="text-3xl font-bold">5</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-xl font-bold mb-2">Ausstehende Freigaben</h3>
+            <p class="text-3xl font-bold">2</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="text-xl font-bold mb-2">Neue Dokumente</h3>
+            <p class="text-3xl font-bold">7</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Projects -->
+      <div class="card mb-6">
+        <div class="card-header">
+          <h2 class="card-title">Aktuelle Projekte</h2>
+          <a href="projects.html" class="btn btn-primary">Alle Projekte</a>
+        </div>
+        <div class="card-body">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Project Card 1 -->
+            <a href="project-detail.html?id=1" class="card project-card">
+              <div class="project-card-header">
+                <h3 class="project-card-title">Die verlorene Zeit</h3>
+                <p class="project-card-subtitle">Drama • 90 min</p>
+              </div>
+              <div class="project-card-body">
+                <p class="mb-2">Ein junger Filmemacher kämpft mit den Herausforderungen seines ersten Spielfilms.</p>
+                <div class="mb-2">
+                  <span class="badge status-produktion">In Produktion</span>
+                </div>
+                <div class="progress mb-2">
+                  <div class="progress-bar" style="width: 65%"></div>
+                </div>
+                <p class="text-sm">Drehbeginn: 15.05.2025</p>
+              </div>
+              <div class="project-card-footer">
+                <span class="text-sm">Letzte Aktualisierung: 10.04.2025</span>
+              </div>
+            </a>
+
+            <!-- Project Card 2 -->
+            <a href="project-detail.html?id=2" class="card project-card">
+              <div class="project-card-header">
+                <h3 class="project-card-title">Stadtlichter</h3>
+                <p class="project-card-subtitle">Dokumentarfilm • 60 min</p>
+              </div>
+              <div class="project-card-body">
+                <p class="mb-2">Eine Dokumentation über das Nachtleben in Berlin und seine Protagonisten.</p>
+                <div class="mb-2">
+                  <span class="badge status-projektfreigabe_erteilt">Projektfreigabe erteilt</span>
+                </div>
+                <div class="progress mb-2">
+                  <div class="progress-bar" style="width: 30%"></div>
+                </div>
+                <p class="text-sm">Drehbeginn: 01.06.2025</p>
+              </div>
+              <div class="project-card-footer">
+                <span class="text-sm">Letzte Aktualisierung: 05.04.2025</span>
+              </div>
+            </a>
+
+            <!-- Project Card 3 -->
+            <a href="project-detail.html?id=3" class="card project-card">
+              <div class="project-card-header">
+                <h3 class="project-card-title">Echos der Vergangenheit</h3>
+                <p class="project-card-subtitle">Historisches Drama • 120 min</p>
+              </div>
+              <div class="project-card-body">
+                <p class="mb-2">Eine Geschichte über Familiengeheimnisse in der Nachkriegszeit.</p>
+                <div class="mb-2">
+                  <span class="badge status-produktionsfreigabe_beantragt">Produktionsfreigabe beantragt</span>
+                </div>
+                <div class="progress mb-2">
+                  <div class="progress-bar" style="width: 45%"></div>
+                </div>
+                <p class="text-sm">Drehbeginn: 15.07.2025</p>
+              </div>
+              <div class="project-card-footer">
+                <span class="text-sm">Letzte Aktualisierung: 12.04.2025</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Documents -->
+      <div class="card mb-6">
+        <div class="card-header">
+          <h2 class="card-title">Aktuelle Dokumente</h2>
+          <a href="documents.html" class="btn btn-primary">Alle Dokumente</a>
+        </div>
+        <div class="card-body">
+          <ul class="document-list">
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Drehbuch_Die_verlorene_Zeit_v2.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Drehbuch</span>
+                  <span class="badge badge-success">Genehmigt</span>
+                  <span class="text-sm">08.04.2025</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Kalkulation_Stadtlichter_final.xlsx</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Kalkulation</span>
+                  <span class="badge badge-warning">In Prüfung</span>
+                  <span class="text-sm">05.04.2025</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+            <li class="document-item">
+              <div class="document-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="document-info">
+                <div class="document-title">Antrag_Produktionsfreigabe_Echos.pdf</div>
+                <div class="document-meta">
+                  <span class="badge badge-primary">Antrag Produktionsfreigabe</span>
+                  <span class="badge badge-warning">Eingereicht</span>
+                  <span class="text-sm">12.04.2025</span>
+                </div>
+              </div>
+              <div class="document-actions">
+                <button class="btn btn-outline btn-sm">
+                  <i class="fas fa-download"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Aktivitäten</h2>
+        </div>
+        <div class="card-body">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">14.04.2025, 10:23</div>
+                <div class="timeline-title">Produktionsfreigabe beantragt</div>
+                <div class="timeline-body">Für das Projekt "Echos der Vergangenheit" wurde die Produktionsfreigabe beantragt.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">12.04.2025, 15:45</div>
+                <div class="timeline-title">Dokument hochgeladen</div>
+                <div class="timeline-body">Neues Dokument "Antrag_Produktionsfreigabe_Echos.pdf" wurde hochgeladen.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">10.04.2025, 09:12</div>
+                <div class="timeline-title">Projektstatus geändert</div>
+                <div class="timeline-body">Das Projekt "Die verlorene Zeit" ist jetzt in Produktion.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">08.04.2025, 14:30</div>
+                <div class="timeline-title">Dokument genehmigt</div>
+                <div class="timeline-body">Das Dokument "Drehbuch_Die_verlorene_Zeit_v2.pdf" wurde genehmigt.</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">05.04.2025, 11:20</div>
+                <div class="timeline-title">Projektfreigabe erteilt</div>
+                <div class="timeline-body">Für das Projekt "Stadtlichter" wurde die Projektfreigabe erteilt.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

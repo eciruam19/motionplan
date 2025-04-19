@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFFB Motionplan - Projekte</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-user-role="studierende">
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">DFFB Motionplan</div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projekte</a></li>
+          <li class="nav-item"><a href="documents.html" class="nav-link">Dokumente</a></li>
+        </ul>
+      </nav>
+      <div class="user-menu">
+        <button id="user-menu-button" class="user-menu-button">
+          <span>Max Mustermann</span>
+          <i class="fas fa-chevron-down ml-2"></i>
+        </button>
+        <div id="user-menu-dropdown" class="user-menu-dropdown">
+          <a href="#" class="user-menu-item">Profil</a>
+          <a href="#" class="user-menu-item">Einstellungen</a>
+          <a href="login.html" class="user-menu-item">Abmelden</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Alert Container -->
+      <div id="alert-container"></div>
+
+      <div class="flex justify-between items-center mb-4">
+        <h1>Projekte</h1>
+        <button class="btn btn-primary" data-modal-target="new-project-modal">Neues Projekt</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="card mb-6">
+        <div class="card-body">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="form-group">
+              <label for="status-filter" class="form-label">Status</label>
+              <select id="status-filter" class="form-control">
+                <option value="">Alle Status</option>
+                <option value="angemeldet">Angemeldet</option>
+                <option value="projektfreigabe_beantragt">Projektfreigabe beantragt</option>
+                <option value="projektfreigabe_erteilt">Projektfreigabe erteilt</option>
+                <option value="produktionsfreigabe_beantragt">Produktionsfreigabe beantragt</option>
+                <option value="produktionsfreigabe_erteilt">Produktionsfreigabe erteilt</option>
+                <option value="produktion">In Produktion</option>
+                <option value="postproduktion">In Postproduktion</option>
+                <option value="abgeschlossen">Abgeschlossen</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="type-filter" class="form-label">Projekttyp</label>
+              <select id="type-filter" class="form-control">
+                <option value="">Alle Typen</option>
+                <option value="spielfilm">Spielfilm</option>
+                <option value="dokumentarfilm">Dokumentarfilm</option>
+                <option value="kurzfilm">Kurzfilm</option>
+                <option value="experimentalfilm">Experimentalfilm</option>
+                <option value="animation">Animation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="search" class="form-label">Suche</label>
+              <input type="text" id="search" class="form-control" placeholder="Projekttitel, Beschreibung...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects List -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Project Card 1 -->
+        <a href="project-detail.html?id=1" class="card project-card" id="project-1">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Die verlorene Zeit</h3>
+            <p class="project-card-subtitle">Drama • 90 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Ein junger Filmemacher kämpft mit den Herausforderungen seines ersten Spielfilms.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-produktion">In Produktion</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 65%"></div>
+            </div>
+            <p class="text-sm">Drehbeginn: 15.05.2025</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 10.04.2025</span>
+          </div>
+        </a>
+
+        <!-- Project Card 2 -->
+        <a href="project-detail.html?id=2" class="card project-card" id="project-2">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Stadtlichter</h3>
+            <p class="project-card-subtitle">Dokumentarfilm • 60 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Eine Dokumentation über das Nachtleben in Berlin und seine Protagonisten.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-projektfreigabe_erteilt">Projektfreigabe erteilt</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 30%"></div>
+            </div>
+            <p class="text-sm">Drehbeginn: 01.06.2025</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 05.04.2025</span>
+          </div>
+        </a>
+
+        <!-- Project Card 3 -->
+        <a href="project-detail.html?id=3" class="card project-card" id="project-3">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Echos der Vergangenheit</h3>
+            <p class="project-card-subtitle">Historisches Drama • 120 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Eine Geschichte über Familiengeheimnisse in der Nachkriegszeit.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-produktionsfreigabe_beantragt">Produktionsfreigabe beantragt</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 45%"></div>
+            </div>
+            <p class="text-sm">Drehbeginn: 15.07.2025</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 12.04.2025</span>
+          </div>
+        </a>
+
+        <!-- Project Card 4 -->
+        <a href="project-detail.html?id=4" class="card project-card" id="project-4">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Traumfänger</h3>
+            <p class="project-card-subtitle">Experimentalfilm • 45 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Eine experimentelle Erkundung der Traumwelt und des Unterbewusstseins.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-angemeldet">Angemeldet</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 10%"></div>
+            </div>
+            <p class="text-sm">Drehbeginn: Noch nicht festgelegt</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 01.04.2025</span>
+          </div>
+        </a>
+
+        <!-- Project Card 5 -->
+        <a href="project-detail.html?id=5" class="card project-card" id="project-5">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Grenzgänger</h3>
+            <p class="project-card-subtitle">Kurzfilm • 20 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Ein Kurzfilm über die Begegnung zweier Menschen an einer Grenze.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-postproduktion">In Postproduktion</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
+            <p class="text-sm">Drehbeginn: 10.02.2025</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 20.03.2025</span>
+          </div>
+        </a>
+
+        <!-- Project Card 6 -->
+        <a href="project-detail.html?id=6" class="card project-card" id="project-6">
+          <div class="project-card-header">
+            <h3 class="project-card-title">Farbspektrum</h3>
+            <p class="project-card-subtitle">Animation • 15 min</p>
+          </div>
+          <div class="project-card-body">
+            <p class="mb-2">Eine animierte Reise durch die Welt der Farben und ihre Bedeutungen.</p>
+            <div class="mb-2">
+              <span class="badge project-status status-projektfreigabe_beantragt">Projektfreigabe beantragt</span>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar" style="width: 25%"></div>
+            </div>
+            <p class="text-sm">Produktionsbeginn: 01.08.2025</p>
+          </div>
+          <div class="project-card-footer">
+            <span class="text-sm">Letzte Aktualisierung: 08.04.2025</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- New Project Modal -->
+  <div id="new-project-modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Neues Projekt erstellen</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="new-project-form">
+          <div class="form-group">
+            <label for="project-title" class="form-label">Projekttitel</label>
+            <input type="text" id="project-title" name="project-title" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="project-type" class="form-label">Projekttyp</label>
+            <select id="project-type" name="project-type" class="form-control" required>
+              <option value="spielfilm">Spielfilm</option>
+              <option value="dokumentarfilm">Dokumentarfilm</option>
+              <option value="kurzfilm">Kurzfilm</option>
+              <option value="experimentalfilm">Experimentalfilm</option>
+              <option value="animation">Animation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="project-duration" class="form-label">Geplante Länge (Minuten)</label>
+            <input type="number" id="project-duration" name="project-duration" class="form-control" min="1">
+          </div>
+          <div class="form-group">
+            <label for="project-description" class="form-label">Projektbeschreibung</label>
+            <textarea id="project-description" name="project-description" class="form-control" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="project-shooting-start" class="form-label">Geplanter Drehbeginn</label>
+            <input type="date" id="project-shooting-start" name="project-shooting-start" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="project-budget" class="form-label">Geschätztes Budget (€)</label>
+            <input type="number" id="project-budget" name="project-budget" class="form-control" min="0">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-close">Abbrechen</button>
+        <button class="btn btn-primary" id="submit-project">Projekt erstellen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

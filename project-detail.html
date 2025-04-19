@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFFB Motionplan - Projektdetails</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body data-user-role="studierende">
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">DFFB Motionplan</div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Dashboard</a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link">Projekte</a></li>
+          <li class="nav-item"><a href="documents.html" class="nav-link">Dokumente</a></li>
+        </ul>
+      </nav>
+      <div class="user-menu">
+        <button id="user-menu-button" class="user-menu-button">
+          <span>Max Mustermann</span>
+          <i class="fas fa-chevron-down ml-2"></i>
+        </button>
+        <div id="user-menu-dropdown" class="user-menu-dropdown">
+          <a href="#" class="user-menu-item">Profil</a>
+          <a href="#" class="user-menu-item">Einstellungen</a>
+          <a href="login.html" class="user-menu-item">Abmelden</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Alert Container -->
+      <div id="alert-container"></div>
+
+      <!-- Project Header -->
+      <div class="card mb-6">
+        <div class="card-body">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h1 class="text-2xl font-bold mb-2">Die verlorene Zeit</h1>
+              <p class="text-lg mb-2">Drama • 90 min</p>
+              <div class="mb-2">
+                <span class="badge project-status status-produktion">In Produktion</span>
+              </div>
+            </div>
+            <div class="user-menu">
+              <button id="project-actions-button" class="btn btn-outline">
+                <span>Aktionen</span>
+                <i class="fas fa-chevron-down ml-2"></i>
+              </button>
+              <div id="project-actions-dropdown" class="user-menu-dropdown">
+                <button class="user-menu-item status-change-button" data-project-id="1" data-status="postproduktion">Status: In Postproduktion</button>
+                <button class="user-menu-item status-change-button" data-project-id="1" data-status="abgeschlossen">Status: Abgeschlossen</button>
+                <a href="#" class="user-menu-item">Projekt bearbeiten</a>
+                <button class="user-menu-item" data-modal-target="upload-document-modal">Dokument hochladen</button>
+                <button class="user-menu-item" data-modal-target="vgeld-modal">V-Geld beantragen</button>
+              </div>
+            </div>
+          </div>
+          <p class="mb-4">Ein junger Filmemacher kämpft mit den Herausforderungen seines ersten Spielfilms. Zwischen künstlerischem Anspruch und praktischen Zwängen muss er seinen eigenen Weg finden.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <p class="font-semibold">Projektleiter</p>
+              <p>Max Mustermann</p>
+            </div>
+            <div>
+              <p class="font-semibold">Drehzeitraum</p>
+              <p>15.05.2025 - 30.06.2025</p>
+            </div>
+            <div>
+              <p class="font-semibold">Budget</p>
+              <p>25.000 €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Tabs -->
+      <div class="card">
+        <div class="card-header">
+          <div class="tabs">
+            <div class="tab active" data-target="tab-overview">Übersicht</div>
+            <div class="tab" data-target="tab-documents">Dokumente</div>
+            <div class="tab" data-target="tab-finance">Finanzen</div>
+            <div class="tab" data-target="tab-team">Team</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Overview Tab -->
+          <div id="tab-overview" class="tab-pane active">
+            <h2 class="text-xl font-bold mb-4">Projektübersicht</h2>
+            
+            <!-- Project Progress -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-2">Projektfortschritt</h3>
+              <div class="progress mb-2">
+                <div class="progress-bar" style="width: 65%"></div>
+              </div>
+              <p class="text-sm text-right">65% abgeschlossen</p>
+            </div>
+            
+            <!-- Project Timeline -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-2">Projektzeitplan</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-medium">Projektanmeldung</p>
+                  <p>01.01.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Projektfreigabe beantragt</p>
+                  <p>15.01.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Projektfreigabe erteilt</p>
+                  <p>01.02.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Produktionsfreigabe beantragt</p>
+                  <p>15.03.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Produktionsfreigabe erteilt</p>
+                  <p>01.04.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Produktion</p>
+                  <p>15.05.2025 - 30.06.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Postproduktion</p>
+                  <p>01.07.2025 - 31.08.2025</p>
+                </div>
+                <div>
+                  <p class="font-medium">Projektabschluss</p>
+                  <p>15.09.2025</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div>
+              <h3 class="text-lg font-semibold mb-2">Aktivitäten</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">10.04.2025, 09:12</div>
+                    <div class="timeline-title">Projektstatus geändert</div>
+                    <div class="timeline-body">Das Projekt ist jetzt in Produktion.</div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">08.04.2025, 14:30</div>
+                    <div class="timeline-title">Dokument genehmigt</div>
+                    <div class="timeline-body">Das Dokument "Drehbuch_Die_verlorene_Zeit_v2.pdf" wurde genehmigt.</div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">01.04.2025, 11:20</div>
+                    <div class="timeline-title">Produktionsfreigabe erteilt</div>
+                    <div class="timeline-body">Für das Projekt wurde die Produktionsfreigabe erteilt.</div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-date">15.03.2025, 10:45</div>
+                    <div class="timeline-title">Produktionsfreigabe beantragt</div>
+                    <div class="timeline-body">Für das Projekt wurde die Produktionsfreigabe beantragt.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Documents Tab -->
+          <div id="tab-documents" class="tab-pane">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-xl font-bold">Dokumente</h2>
+              <button class="btn btn-primary" data-modal-target="upload-document-modal">Dokument hochladen</button>
+            </div>
+            
+            <ul class="document-list" id="documents-list">
+              <li class="document-item">
+                <div class="document-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="document-info">
+                  <div class="document-title">Drehbuch_Die_verlorene_Zeit_v2.pdf</div>
+                  <div class="document-meta">
+                    <span class="badge badge-primary">Drehbuch</span>
+                    <span class="badge badge-success">Genehmigt</span>
+                    <span class="text-sm">08.04.2025</span>
+                  </div>
+                </div>
+                <div class="document-actions">
+                  <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="document-item">
+                <div class="document-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="document-info">
+                  <div class="document-title">Kalkulation_Die_verlorene_Zeit_final.xlsx</div>
+                  <div class="document-meta">
+                    <span class="badge badge-primary">Kalkulation</span>
+                    <span class="badge badge-success">Genehmigt</span>
+                    <span class="text-sm">15.03.2025</span>
+                  </div>
+                </div>
+                <div class="document-actions">
+                  <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="document-item">
+                <div class="document-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="document-info">
+                  <div class="document-title">Antrag_Produktionsfreigabe.pdf</div>
+                  <div class="document-meta">
+                    <span class="badge badge-primary">Antrag Produktionsfreigabe</span>
+                    <span class="badge badge-success">Genehmigt</span>
+                    <span class="text-sm">15.03.2025</span>
+                  </div>
+                </div>
+                <div class="document-actions">
+                  <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="document-item">
+                <div class="document-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="document-info">
+                  <div class="document-title">Drehplan.pdf</div>
+                  <div class="document-meta">
+                    <span class="badge badge-primary">Drehplan</span>
+                    <span class="badge badge-success">Genehmigt</span>
+                    <span class="text-sm">20.03.2025</span>
+                  </div>
+                </div>
+                <div class="document-actions">
+                  <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </li>
+              <li class="document-item">
+                <div class="document-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="document-info">
+                  <div class="document-title">Besetzungsliste.pdf</div>
+                  <div class="document-meta">
+                    <span class="badge badge-primary">Besetzungsliste</span>
+                    <span class="badge badge-success">Genehmigt</span>
+                    <span class="text-sm">18.03.2025</span>
+                  </div>
+                </div>
+                <div class="document-actions">
+                  <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-download"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Finance Tab -->
+          <div id="tab-finance" class="tab-pane">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-xl font-bold">Finanzen</h2>
+              <button class="btn btn-primary" data-modal-target="vgeld-modal">V-Geld beantragen</button>
+            </div>
+            
+            <!-- Budget Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-500 mb-1">Gesamtbudget</p>
+                <p class="text-2xl font-bold">25.000 €</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-500 mb-1">Genehmigtes Budget</p>
+                <p class="text-2xl font-bold">25.000 €</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-sm text-gray-500 mb-1">Verbleibendes Budget</p>
+                <p class="text-2xl font-bold">18.500 €</p>
+              </div>
+            </div>
+            
+            <!-- Transactions -->
+            <h3 class="text-lg font-semibold mb-2">Transaktionen</h3>
+            <div class="overflow-x-auto">
+              <table class="table" id="transactions-list">
+                <thead>
+                  <tr>
+                    <th>Datum</th>
+                    <th>Typ</th>
+                    <th>Betrag</th>
+                    <th>Beschreibung</th>
+                    <th>Status</th>
+                    <th>Aktionen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="transaction-1">
+                    <td>05.04.2025</td>
+                    <td>Verrechnungsgeld</td>
+                    <td>5.000 €</td>
+                    <td>Vorkosten für Drehvorbereitung</td>
+                    <td><span class="badge transaction-status badge-success">Genehmigt</span></td>
+                    <td class="text-right">
+                      <button class="btn btn-sm btn-primary mark-as-paid" data-transaction-id="1" data-transaction-type="verrechnungsgeld" style="display: none;">
+                        Als ausgezahlt markieren
+                      </button>
+                    </td>
+                  </tr>
+                  <tr id="transaction-2">
+                    <td>10.04.2025</td>
+                    <td>Verrechnungsgeld</td>
+                    <td>1.500 €</td>
+                    <td>Kostüme und Requisiten</td>
+                    <td><span class="badge transaction-status badge-warning">Beantragt</span></td>
+                    <td class="text-right">
+                      <button class="btn btn-sm btn-success approve-transaction" data-transaction-id="2">
+                        Genehmigen
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Team Tab -->
+          <div id="tab-team" class="tab-pane">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-xl font-bold">Projektteam</h2>
+              <button class="btn btn-primary">Teammitglied hinzufügen</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Max Mustermann</h3>
+                  <p class="text-sm mb-2">Regie</p>
+                  <p class="text-sm">max.mustermann@example.com</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Anna Schmidt</h3>
+                  <p class="text-sm mb-2">Kamera</p>
+                  <p class="text-sm">anna.schmidt@example.com</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Thomas Müller</h3>
+                  <p class="text-sm mb-2">Produktion</p>
+                  <p class="text-sm">thomas.mueller@example.com</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Julia Weber</h3>
+                  <p class="text-sm mb-2">Ton</p>
+                  <p class="text-sm">julia.weber@example.com</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Michael Becker</h3>
+                  <p class="text-sm mb-2">Schnitt</p>
+                  <p class="text-sm">michael.becker@example.com</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-bold mb-1">Sarah Fischer</h3>
+                  <p class="text-sm mb-2">Ausstattung</p>
+                  <p class="text-sm">sarah.fischer@example.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Upload Document Modal -->
+  <div id="upload-document-modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Dokument hochladen</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="document-upload-form">
+          <div class="form-group">
+            <label for="document-file" class="form-label">Datei auswählen</label>
+            <input type="file" id="document-file" name="document-file" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="document-type" class="form-label">Dokumenttyp</label>
+            <select id="document-type" name="document-type" class="form-control" required>
+              <option value="drehbuch">Drehbuch</option>
+              <option value="kalkulation">Kalkulation</option>
+              <option value="finanzierungsplan">Finanzierungsplan</option>
+              <option value="zeitplan">Zeitplan</option>
+              <option value="drehplan">Drehplan</option>
+              <option value="motivliste">Motivliste</option>
+              <option value="stabliste">Stabliste</option>
+              <option value="besetzungsliste">Besetzungsliste</option>
+              <option value="antrag_produktionsfreigabe">Antrag Produktionsfreigabe</option>
+              <option value="produktionsvertrag">Produktionsvertrag</option>
+              <option value="motivvertrag">Motivvertrag</option>
+              <option value="darstellervertrag">Darstellervertrag</option>
+              <option value="v_geld_antrag">V-Geld Antrag</option>
+              <option value="v_geld_abrechnung">V-Geld Abrechnung</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="document-description" class="form-label">Beschreibung (optional)</label>
+            <textarea id="document-description" name="document-description" class="form-control" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-close">Abbrechen</button>
+        <button class="btn btn-primary" id="submit-document">Hochladen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- V-Geld Modal -->
+  <div id="vgeld-modal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">V-Geld beantragen</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="vgeld-application-form">
+          <div class="form-group">
+            <label for="amount" class="form-label">Betrag (€)</label>
+            <input type="number" id="amount" name="amount" class="form-control" min="0" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="description" class="form-label">Verwendungszweck</label>
+            <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="vgeld-file" class="form-label">Belege (optional)</label>
+            <input type="file" id="vgeld-file" name="vgeld-file" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline modal-close">Abbrechen</button>
+        <button class="btn btn-primary" id="submit-vgeld">Beantragen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize project actions dropdown
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectActionsButton = document.getElementById('project-actions-button');
+      const projectActionsDropdown = document.getElementById('project-actions-dropdown');
+      
+      if (projectActionsButton && projectActionsDropdown) {
+        projectActionsButton.addEventListener('click', function() {
+          projectActionsDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!projectActionsButton.contains(event.target) && !projectActionsDropdown.contains(event.target)) {
+            projectActionsDropdown.classList.remove('show');
+          }
+        });
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
